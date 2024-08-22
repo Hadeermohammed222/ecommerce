@@ -1,0 +1,13 @@
+
+.img-fluid{
+    height:100%;
+    width:100%;
+    border-radius: 10px;
+}
+section{
+    background-image: linear-gradient(-225deg,#d0b8a8 0%,#f8ede2 100%);
+}
+.card{
+    border-radius: 5px;
+    background-image:linear-gradient(180deg,#992b1c 0%,#f2e8c6 100%);
+}

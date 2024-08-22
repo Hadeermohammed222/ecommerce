@@ -1,0 +1,121 @@
+
+ <!--  -->
+    <!-- Modal -->
+    <div class="container-fluid">
+        <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add Product
+        </button>
+    
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Product</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="form">
+                            <div class="row">
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="title">Title</label>
+                                    <input type="text" id="title" formControlName="title" class="form-control" placeholder="Title">
+                                </div>
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="price">Price</label>
+                                    <input type="number" id="price" formControlName="price" class="form-control" placeholder="Price">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <app-select [category]="'Categories :'" [products]="products" [categories]="categories" (selectValue)="filterCategory($event)"></app-select>
+                                </div>
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="image">Image</label>
+                                    <div class="d-flex align-items-center">
+                                        <img *ngIf="imageSrc" [src]="imageSrc" alt="Selected Image" class="img-thumbnail me-2">
+                                        <input type="file" id="image" class="form-control" formControlName="image" (change)="onFileSelected($event)">
+                                    </div>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="description">Description</label>
+                                    <textarea id="description" class="form-control" formControlName="description" placeholder="Type here..."></textarea>
+                                </div>
+                                <div class="col-12 d-flex justify-content-end mt-3">
+                                    <button type="submit" class="btn btn-success" (click)="addProduct()">Add Product</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <table class="table table-striped">
+       <thead>
+           <tr >
+               <th>S.ID</th>
+               <th>Image</th>
+               <th>title</th>
+               <th>Description</th>
+               <th>Price</th>
+               <th>Action</th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr *ngFor="let item of products;let i = index;">
+               <td>{{i+1}}</td>
+               <td class="image"><img src="{{item.image}}"/></td>
+               <td>{{item.title}}</td>
+               <td>{{item.description}}</td>
+               <td>{{item.price}}</td>
+               <td><button class="btn btn-warning" routerLink="/update/{{item.id}}" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" >Update</button></td>
+               <td><button class="btn btn-warning" (click)="deleteProduct(item.id)">Delete</button></td>
+           </tr>
+       </tbody>
+    </table> -->
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>S.ID</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of products; let i = index;">
+                    <td data-label="S.ID">{{i + 1}}</td>
+                    <td class="image" data-label="Image">
+                        <img src="{{item.image}}" alt="Product Image"/>
+                    </td>
+                    <td data-label="Title">{{item.title}}</td>
+                    <td data-label="Description">{{item.description}}</td>
+                    <td data-label="Price">{{item.price}}</td>
+                    <td data-label="Action">
+                        <button class="btn btn-warning" routerLink="/update/{{item.id}}" data-bs-toggle="modal">Update</button>
+                        <button class="btn btn-warning" (click)="deleteProduct(item.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+

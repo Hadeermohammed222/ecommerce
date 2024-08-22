@@ -1,0 +1,39 @@
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.box {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.my-2.w-25 {
+    width: 100%;
+    max-width: 300px; /* Set a max-width for the filter to prevent it from being too wide */
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .box {
+        margin-top: 20px;
+    }
+
+    .my-2.w-25 {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-sm-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .my-2.w-25 {
+        width: 100%;
+    }
+}

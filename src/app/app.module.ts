@@ -1,29 +1,51 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
-import { NotfoundComponent } from './notfound/notfound.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { AllProductsComponent } from './users/products/all-products/all-products.component';
+import { ProductDetailsComponent } from './users/products/product-details/product-details.component';
+import { CartComponent } from './users/Carts/cart/cart.component';
+import { HeaderComponent } from './users/shared/header/header.component';
+import { SpinnerComponent } from './users/shared/spinner/spinner.component';
+import { SelectComponent } from './users/shared/select/select.component';
+import { ProductComponent } from './users/shared/product/product.component';
+import { AdmainComponent } from './admain/admain/admain.component';
+import { MarketComponent } from './admain/market/market.component';
+import { HomeComponent } from './component/home/home.component';
+import { UpdateProductComponent } from './admain/update-product/update-product.component';
+import { SignSignupComponent } from './component/sign-signup/sign-signup.component';
 
-@NgModule({
+
+@NgModule
+({
   declarations: [
     AppComponent,
-    PortfolioComponent,
-    AboutComponent,
-    ContactComponent,
+    AllProductsComponent,
+    ProductDetailsComponent,
+    CartComponent,
+    HeaderComponent,
+    SpinnerComponent,
+    SelectComponent,
+    ProductComponent,
+    AdmainComponent,
+    MarketComponent,
     HomeComponent,
-    NavbarComponent,
-    FooterComponent,
-    NotfoundComponent,
+    UpdateProductComponent,
+    SignSignupComponent
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    RouterModule,
+    FormsModule,
+  ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

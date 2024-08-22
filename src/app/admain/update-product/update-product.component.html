@@ -1,0 +1,48 @@
+'<div class="update">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class="col-xl-5">
+                <div class="image">
+                    <img src="../../../assets/images/home-bg3.jpeg" alt="" class="img-fluid">
+                </div>
+            </div> -->
+            <!-- form section -->
+             <div class="col-xl-9 m-auto">
+                <div class="card">
+                    <h5>update product</h5>
+                    <div class="row">
+                        <form [formGroup]="updateform">
+                            <div class="form-group mb-1">
+                                    <img src="{{productId.image}}" class=" d-block w-50 m-auto">  
+                                    <label for="formFile" class="form-label">Image</label>
+                                    <input  class="form-control" type="file" (change)="getImagePath($event)" placeholder="Enter Title ...">
+                            </div>
+                            <div class="form-group mb-1">
+                              <label for="exampleInputEmail1" class="form-label">Title</label>
+                              <input class="form-control" type="text" [(ngModel)]="productId.title"  formControlName="title" formControlName="title" placeholder="Enter Title ...">
+                            </div>
+                            <div class="form-group mb-1">
+                                <label for="exampleInputEmail1" class="form-label" >Price</label>
+                                <input class="form-control" type="text" [(ngModel)]="productId.price" formControlName="price" placeholder="Enter Price ...">
+                            </div>
+                            <!-- <div class="form-group mb-1">
+                                <app-select [category] = "'Categories :'"  [products] ="products" [categories] = "categories" (selectValue)="filterCategory($event)"></app-select>
+                              </div> -->
+                            <div class="form-group mb-3">
+                                <label for="exampleFormControlTextarea1">Description</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="productId.description" formControlName="description" rows="3"></textarea>
+                              </div>
+                           
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary" (click)="update()">Update</button>&nbsp;
+                                <button type="submit" routerLink = "/market" class="btn btn-success">Back</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,18 @@
+<div class="item p-2" *ngIf="!loading">
+    <div [routerLink] = "['/details', item.id]">
+        <img src="{{item.image}}" alt="no-image">
+        <div class="body">
+            <h4>{{item.title}}</h4>
+            <p>{{item.description}}</p>
+        </div>
+    </div>
+   <div class="px-3 mb-2 d-flex justify-content-between align-items-center">
+        <button class="btn btn-success" *ngIf= "!addbutton" (click)="addbutton =true">Add To Cart</button>
+        <div class="d-flex w-50" *ngIf="addbutton">
+            <input type="number" class="form-control" [(ngModel)]="amount">
+            <button class="btn btn-danger" (click)="addToCart(item);addbutton=false">Add</button>
+        </div>
+        <span>{{item.price}} L.E</span>
+   </div>
+   <app-spinner *ngIf="loading"></app-spinner>
+</div>

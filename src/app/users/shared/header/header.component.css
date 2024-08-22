@@ -1,0 +1,32 @@
+nav{
+    background:linear-gradient(to right,#900b0b,#440606);
+    color:#fff;
+    margin-bottom: 0px;
+  }
+ nav a {
+    text-decoration: none;
+    color:#fff;
+    display: inline-block;
+    margin-right: 20px;
+ }
+   nav .content{
+      display:flex;
+      justify-content:space-between;
+      align-items: center;
+      padding: 10px 0px;
+  }
+  nav ul{
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      width:20%;
+      margin:0;
+  }
+  nav li{
+      cursor: pointer;
+      font-size: 22px;
+      color:#fff;
+      text-decoration: none;
+}
+    
+ /***** start slider ***/
