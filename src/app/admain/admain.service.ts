@@ -19,35 +19,35 @@ export class AdmainService {
   }
 
   createProduct(product:any){
-    return this.http.post('https://fakestoreapi.com/products',product);
+    return this.http.post('https://ecommerce-back-six.vercel.app/product',product);
     
   }
   deleteCart(id:number){
     return this.http.delete('https://fakestoreapi.com/carts/' + id);
   }
   getProduct(){
-    return this.http.get('http://localhost:3005/product');
+    return this.http.get('https://ecommerce-back-six.vercel.app/product');
   }
   setProduct(model:any)
   {
-    return this.http.post('http://localhost:3005/product',model);
+    return this.http.post('https://ecommerce-back-six.vercel.app/product',model);
   }
   deleteProduct(productId: number): Observable<any> {
-    return this.http.delete(`http://localhost:3005/product/${productId}`);
+    return this.http.delete(`https://ecommerce-back-six.vercel.app/product${productId}`);
   }
   updateProduct(product: any,id:number) {
-    return this.http.put(`http://localhost:3005/product/${id}`, product);
+    return this.http.put(`https://ecommerce-back-six.vercel.app/product${id}`, product);
   }
   fetchdata(id:number){
-    return this.http.get(`http://localhost:3005/product/${id}`);
+    return this.http.get(`https://ecommerce-back-six.vercel.app/product/${id}`);
   }
   getUsers(){
-    return this.http.get(`http://localhost:3005/users`);
+    return this.http.get(`https://ecommerce-back-six.vercel.app/users`);
   }
   addUsers(data: any, password: any) {
     // Combine data and password into a single object to send to the server
     const user = { ...data, password };
-    return this.http.post('http://localhost:3005/users', user);
+    return this.http.post('https://ecommerce-back-six.vercel.app/users', user);
   }
   
 }
