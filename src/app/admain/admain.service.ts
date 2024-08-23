@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AdmainService {
+  sigin(name: any, password: any) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http:HttpClient) {
   }
@@ -41,8 +44,10 @@ export class AdmainService {
   getUsers(){
     return this.http.get(`http://localhost:3005/users`);
   }
-  addUsers(data:any){
-        return this.http.post('http://localhost:3005/users',data);
+  addUsers(data: any, password: any) {
+    // Combine data and password into a single object to send to the server
+    const user = { ...data, password };
+    return this.http.post('http://localhost:3005/users', user);
   }
-
+  
 }
